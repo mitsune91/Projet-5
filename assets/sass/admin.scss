@@ -1,0 +1,29 @@
+#button {
+  cursor: pointer;
+}
+
+hr {
+  margin: 0;
+}
+
+#mySidebar {
+  background-color: #222222;
+  width: 200px;
+  display: none;
+  position: absolute;
+  height: 100%;
+
+  li a {
+    color: white;
+
+    i {
+      padding-right: 1em;
+    }
+  }
+
+  li a:hover {
+    background-color: whitesmoke;
+    color: black;
+  }
+}
+

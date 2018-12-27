@@ -1,0 +1,14 @@
+{% extends 'admin.html.twig' %}
+
+
+{% block body %}
+	<h1>Creation d'un article</h1>
+
+	{{ form_start(formGuide) }}
+{{ form_widget(formGuide) }}
+	<button type="submit" class="btn btn-success">
+		Envoyer
+	</button>
+	{{ form_end(formGuide) }}
+
+{% endblock %}

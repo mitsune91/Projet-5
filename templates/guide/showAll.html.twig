@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello!{% endblock %}
+
+{% block body %}
+	<section class="articles row ">
+		{% for guide in guides %}
+			<article class="col-8">
+				<div class="row">
+					<a class="article_link col" href="{{ path('blog_show',{'id': guide.id}) }}">
+						<img src="{{ asset('uploads/images/' ~ guide.Image) }}" class="article_image"></a>
+					<a class="category_guide" href=" #">{{ guide.category.title |upper }}</a>
+					<div class="post_info col">
+						<h3 class="post_title">{{ guide.title| upper | truncate(30) }}</h3>
+						<div class="post_author_date">
+							<p>
+								<small class="post_author">{{ guide.author | upper }}</small>
+								<small
+										class="post_date">{{ guide.CreatedAt | date('d/m/Y') }}</small>
+							</p>
+						</div>
+
+						<div class="post_content">{{ guide.content  | truncate(300)|raw }}</div>
+						<small class="post_comment">{{ guide.comments | length }} Commentaires</small>
+					</div>
+				</div>
+				<hr>
+			</article>
+		{% endfor %}
+		<div class="col">
+			{# list categories#}
+		</div>
+	</section>
+{% endblock %}

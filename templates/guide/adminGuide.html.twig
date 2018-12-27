@@ -1,0 +1,37 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+	<table class="table">
+		<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Titre</th>
+			<th scope="col">Auteur</th>
+			<th scope="col">Commentaires</th>
+			<th scope="col">Action</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for guide in guides %}
+
+
+			<tr>
+				<th scope="row">{{ guide.id }}</th>
+				<td>{{ guide.Title }}</td>
+				<td>{{ guide.Author }}</td>
+				<td>{{ guide.comments | length }}</td>
+				<td><a href="{{ path('blog_show',{'id': guide.id}) }}">Voir</a>
+
+					<a href="{{ path('edit_guide',{'id':guide.id}) }}">Editer</a><a
+							href="{{ path('delete',{'id':guide.id}) }}">Supprimer</a>
+
+				</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<a href="{{ path('add_guide') }}">
+		<button>Créer un article</button>
+	</a>
+
+{% endblock %}

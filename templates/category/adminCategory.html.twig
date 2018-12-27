@@ -1,0 +1,28 @@
+{% extends    'admin.html.twig' %}
+{% block body %}
+	<table class="table">
+		<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">titre</th>
+			<th scope="col">Description</th>
+			<th scope="col">image</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for category in categories %}
+
+
+			<tr>
+				<th scope="row">{{ category.id }}</th>
+				<td>{{ category.Title }}</td>
+				<td>{{ category.Description }}</td>
+				<td><img src="{{ category.Image }}"></td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<a href="{{ path('add_category') }}">
+		<button>Créer une Categorie</button>
+	</a>
+{% endblock %}

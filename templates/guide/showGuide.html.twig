@@ -1,0 +1,43 @@
+{% extends'base.html.twig' %}
+{% block body %}
+	<article class="article_show">
+		<h2>{{ guide.Title }}</h2>
+		<div class="metadata">Ecrit le {{ guide.CreatedAt |date('d/m/Y') }} à {{ guide.CreatedAt | date('H:i') }}
+			dans la categorie {{ guide.category.Title }}</div>
+
+		<div class="image_guide">
+			<img src="{{ asset('uploads/images/' ~ guide.image) }}">
+		</div>
+		<div class="content" style="width: 100%;">
+			{{ guide.Content | raw }}
+		</div>
+	</article>
+	<section id="id">
+		<h1>{{ guide.comments | length }}Commentaires</h1>
+		{% for comment in guide.comments %}
+		<div class="comment">
+			<div class="row">
+				<div class="col-3">
+					{{ comment.author }}(
+					<small>{{ comment.createdAt | date('d/m/Y à H:i') }}</small>
+					)
+				</div>
+				<div class="col">
+					{{ comment.content}}
+
+				</div>
+			</div>
+			{% endfor %}
+			{% if app.user %}
+				{{ form_start(commentForm) }}
+				{{ form_row(commentForm.Author, {'attr':{'placeholder': 'Votre nom'}}) }}
+				{{ form_row(commentForm.Content, {'attr':{'placeholder': 'Votre commentaire'}}) }}
+				<button type="submit" class="btn btn-success">Commenter</button>
+				{{ form_end(commentForm) }}
+			{% else %}
+				<h2>Vous ne pouvez pas commenter si vous n'etes pas connecté</h2>
+				<a href="{{ path('app_login') }}" class="btn btn-primary">Connexion</a>
+			{% endif %}
+		</div>
+	</section>
+{% endblock %}

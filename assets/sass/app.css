@@ -1,0 +1,87 @@
+header {
+  height: 2em;
+  background-color: red; }
+  header .nav a {
+    color: white;
+    padding-top: 4px; }
+  header .nav a:hover {
+    color: lightgrey; }
+
+.header_img img {
+  height: 7em;
+  padding: 1em 2em; }
+
+header span a {
+  text-align: end; }
+
+.menu {
+  background-color: #222222;
+  width: 80%;
+  padding: 0; }
+  .menu .up {
+    color: white;
+    padding: 1em; }
+  .menu a:hover {
+    background-color: red; }
+  .menu .navbar {
+    padding: 0; }
+  .menu .fa-bars {
+    color: white; }
+  .menu .dropdown-menu {
+    background-color: #222222;
+    color: white;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0; }
+  .menu a {
+    color: white;
+    padding: 1em; }
+  .menu .navbar-toggler {
+    padding: .8em; }
+
+.articles {
+  padding-top: 3em;
+  position: relative; }
+  .articles .article_link {
+    width: 100%;
+    overflow: hidden; }
+    .articles .article_link img {
+      width: 100%;
+      transition: all .3s; }
+    .articles .article_link img:hover {
+      transform: scale(1.1); }
+    .articles .article_link a {
+      padding: 0; }
+  .articles .category_guide {
+    position: absolute;
+    bottom: 20%;
+    background-color: red;
+    padding-right: .5em;
+    padding-left: .5em;
+    font-size: small;
+    color: white;
+    text-decoration: none; }
+  .articles .post_info {
+    position: relative; }
+    .articles .post_info img {
+      display: none; }
+    .articles .post_info .post_author {
+      position: absolute;
+      left: 10px;
+      color: red; }
+    .articles .post_info .post_date {
+      position: absolute;
+      right: 10px;
+      color: grey; }
+    .articles .post_info .post_content {
+      padding-top: 1em; }
+    .articles .post_info .post_comment {
+      position: absolute;
+      bottom: 0;
+      color: grey; }
+
+.article_show img {
+  width: 100%; }
+
+/*# sourceMappingURL=app.css.map */

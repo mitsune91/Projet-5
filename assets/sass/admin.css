@@ -1,0 +1,21 @@
+#button {
+  cursor: pointer; }
+
+hr {
+  margin: 0; }
+
+#mySidebar {
+  background-color: #222222;
+  width: 200px;
+  display: none;
+  position: absolute;
+  height: 100%; }
+  #mySidebar li a {
+    color: white; }
+    #mySidebar li a i {
+      padding-right: 1em; }
+  #mySidebar li a:hover {
+    background-color: whitesmoke;
+    color: black; }
+
+/*# sourceMappingURL=admin.css.map */

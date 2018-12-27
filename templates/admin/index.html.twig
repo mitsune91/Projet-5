@@ -1,0 +1,39 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Hello {% endblock %}
+
+{% block body %}
+
+	<div id="dashboard row">
+		<div class="col">
+			<h2>Utilisateurs</h2>
+			<p>Nombres : {{ users | length }}</p>
+			<p>Administrateur(s) :{#{{ users.role_admin | length }}#} </p>
+			<p>Utilisateur(s) :</p>
+		</div>
+		<div class="col">
+			<h2>Articles</h2>
+			<p>Nombres : {{ guides | length }} </p>
+			<p>Commentaires moyen par article :{% if guides| length >0 and comments | length > 0 %}
+					{{   comments | length /guides | length}}
+					{%  else  %}
+					0
+				{% endif %}
+			</p>
+		</div>
+		<div class="col">
+			<h2>Categories</h2>
+			<p>Nombres : {{ categories |length }}</p>
+			<p>Nombre d'articles moyen par categorie :
+				{% if categories | length >0 and guides | length >0 %}
+					{{ guides | length / categories |length }}					{% else %}
+					0
+				{% endif %}</p>
+		</div>
+		<div class="col">
+			<h2>Commentaires</h2>
+			<p>Nombres : {{ comments | length }} </p>
+		</div>
+	</div>
+
+{% endblock %}

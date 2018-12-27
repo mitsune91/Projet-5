@@ -1,0 +1,10 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+	{{ form_start(formCategory) }}
+{{ form_row(formCategory.Title) }}
+	{{ form_row(formCategory.Description) }}
+	{{ form_row(formCategory.Image) }}
+
+	<button type="submit">Creer</button>
+	{{ form_end(formCategory) }}
+{% endblock %}
